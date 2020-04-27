@@ -1,15 +1,15 @@
 module memory_game(clk, rst, enable, bIn, switchIn, gameTimeout, // inputs
-				   score, redLight, g1, g2, g3, endGame); // outputs
+				   score, redLight, g1, g2, g3, endGame, timerEnable); // outputs
 
-	input clk, rst, enable, bIn, gameTimeout;
-	input[15:0] switchIn;
+	input clk, rst, enable, bIn, gameTimeout; // gameTimeout ends the game when timer reaches 0, button input
+	input[15:0] switchIn; // input switches
 	
-	output reg g1, g2, g3, endGame;
+	output reg g1, g2, g3, endGame, timerEnable; // green leds to track which pairs you got right, end game
 	output reg[3:0] score;
-	output reg[15:0] redLight;
+	output reg[15:0] redLight; // turns on red LEDs to match
 
 	reg oneSecEnable, enablePairs;
-	reg[15:0] num1, num2, num3;
+	reg[15:0] num1, num2, num3; // 3 pair sets
 
 	reg[3:0] state;
 	parameter[3:0] GAMEWAIT = 0, INIT = 1, RETRIEVE = 2, FLASH1 = 3, FLASH2 = 4, FLASH3 = 5,
@@ -36,6 +36,7 @@ module memory_game(clk, rst, enable, bIn, switchIn, gameTimeout, // inputs
 					oneSecEnable <= 0;
 					endGame <= 0;
 					enablePairs <= 0;
+					timerEnable <= 0;
 				end
 			else if(gameTimeout)
 				state <= GAMEEND;
@@ -114,6 +115,7 @@ module memory_game(clk, rst, enable, bIn, switchIn, gameTimeout, // inputs
 									begin
 										redLight <= 16'b0000_0000_0000_0000;
 										oneSecEnable <= 0;
+										timerEnable <= 1;
 										state <= PAIR1;
 									end
 								else
@@ -169,6 +171,7 @@ module memory_game(clk, rst, enable, bIn, switchIn, gameTimeout, // inputs
 							end
 						GAMEEND:
 							begin
+								timerEnable <= 0;
 								endGame <= 1;
 								state <= GAMEWAIT;
 								redLight <= 0;

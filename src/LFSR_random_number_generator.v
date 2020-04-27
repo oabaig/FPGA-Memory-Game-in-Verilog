@@ -18,7 +18,6 @@ module LFSR_random_number_generator(clk, rst, q);
 		    LFSR[15:1] <= LFSR[14:0];
     	end
 
-    
     q <= LFSR;
   end
 
