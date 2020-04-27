@@ -1,10 +1,10 @@
 module LFSR_random_number_generator_tb();
 
-	reg clk, rst, enable;
+	reg clk, rst;
 
 	wire[3:0] q;
 
-	LFSR_random_number_generator RNG(clk, rst, enable, q);
+	LFSR_random_number_generator RNG(clk, rst, q);
 
 	always
 		begin
@@ -17,7 +17,6 @@ module LFSR_random_number_generator_tb();
 	initial
 		begin
 			rst = 1;
-			enable = 0;
 			@(posedge clk)
 			@(posedge clk)
 			@(posedge clk)
@@ -30,30 +29,6 @@ module LFSR_random_number_generator_tb();
 			@(posedge clk)
 
 			rst = 1;
-			@(posedge clk)
-			@(posedge clk)
-			@(posedge clk)
-			@(posedge clk)
-
-			enable = 1;
-			@(posedge clk)
-			@(posedge clk)
-			@(posedge clk)
-			@(posedge clk)
-
-			enable = 0;
-			@(posedge clk)
-			@(posedge clk)
-			@(posedge clk)
-			@(posedge clk)
-
-			enable = 1;
-			@(posedge clk)
-			@(posedge clk)
-			@(posedge clk)
-			@(posedge clk)
-
-			enable = 0;
 		end
 
 endmodule

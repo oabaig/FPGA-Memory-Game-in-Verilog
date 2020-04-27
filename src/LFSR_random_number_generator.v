@@ -1,5 +1,5 @@
-module LFSR_random_number_generator(clk, rst, enable, q);
-  input clk, rst, enable;
+module LFSR_random_number_generator(clk, rst, q);
+  input clk, rst;
   output [3:0] q;
 
   reg [3:0] q;
@@ -18,8 +18,8 @@ module LFSR_random_number_generator(clk, rst, enable, q);
 		    LFSR[15:1] <= LFSR[14:0];
     	end
 
-    if(enable)
-    	q <= LFSR;
+    
+    q <= LFSR;
   end
 
 endmodule

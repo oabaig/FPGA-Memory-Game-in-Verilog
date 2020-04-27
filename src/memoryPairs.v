@@ -1,14 +1,17 @@
-module memoryPairs(clk, rst, enable, A, B, C, D, E, F, switchArr, endState);
+module memoryPairs(clk, rst, enable, A, B, C, D, E, F, endState);
 	
 	input clk, rst, enable;
 	output reg endState;
 	output reg [3:0] A, B, C, D, E, F;
-	output reg[14:0] switchArr;
 	wire [3:0] q;
 
-	LFSR_random_number_generator(clk, rst, enable, q);
+	reg countWait;
 
-	always
+	reg [3:0] counter;
+
+	LFSR_random_number_generator LFSR(clk, rst, q);
+
+	always @(posedge clk)
 		begin
 			if(!rst)
 				begin
@@ -19,47 +22,42 @@ module memoryPairs(clk, rst, enable, A, B, C, D, E, F, switchArr, endState);
 					D <= 0;
 					E <= 0;
 					F <= 0;
-					switchArr <= 0;
+					counter <= 0;
+					countWait <= 0;
 				end
 			else if(enable)
 				begin
-					switchArr <= 0;
-					A <= q;
-					@(posedge clk)
-					@(posedge clk)
-					@(posedge clk)
-					@(posedge clk)
-					B <= q;
-					@(posedge clk)
-					@(posedge clk)
-					@(posedge clk)
-					@(posedge clk)
-					C <= q;
-					@(posedge clk)
-					@(posedge clk)
-					@(posedge clk)
-					@(posedge clk)
-					D <= q;
-					@(posedge clk)
-					@(posedge clk)
-					@(posedge clk)
-					@(posedge clk)
-					E <= q;
-					@(posedge clk)
-					@(posedge clk)
-					@(posedge clk)
-					@(posedge clk)
-					F <= q;
-					switchArr[A] <= 1;
-					switchArr[B] <= 1;
-					switchArr[C] <= 1;
-					switchArr[D] <= 1;
-					switchArr[E] <= 1;
-					switchArr[F] <= 1;
-					endState <= 1;
+					countWait <= 1;
+					counter <= 0;
+				end
+			else if(countWait)
+				begin
+					counter <= counter + 1;
+
+					if(counter == 1)
+						A <= q;
+					else if(counter == 2)
+						B <= q;
+					else if(counter == 3)
+						C <= q;
+					else if(counter == 4)
+						D <= q;
+					else if(counter == 5)
+						E <= q;
+					else if(counter == 6)
+						F <= q;
+					else if(counter > 6)
+						begin
+							endState <= 1;
+							counter <= 0;
+							countWait <= 0;
+						end
 				end
 			else
-				endState <= 0;
+				begin
+					endState <= 0;
+					counter <= 0;
+				end
 		end
 
 
