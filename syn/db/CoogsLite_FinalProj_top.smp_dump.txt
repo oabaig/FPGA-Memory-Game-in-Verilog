@@ -1,0 +1,56 @@
+
+State Machine - |CoogsLite_FinalProj_top|score_tracker:scoretrack|state
+Name state.RAM_RESET2 state.COMPARE_MAX2 state.WAIT5 state.WAIT4 state.STORE_MAX state.WAIT1 state.INIT state.WAIT2 state.DISPLAY_MAX state.COMPARE_SCORE1 state.COMPARE_MAX1 state.GET_MAX state.STORE_SCORE state.COMPARE_SCORE state.RAM_RESET 
+state.RAM_RESET 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.COMPARE_SCORE 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.STORE_SCORE 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.GET_MAX 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.COMPARE_MAX1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.COMPARE_SCORE1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.DISPLAY_MAX 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.WAIT2 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.INIT 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.WAIT1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.STORE_MAX 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.WAIT4 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.WAIT5 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.COMPARE_MAX2 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.RAM_RESET2 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |CoogsLite_FinalProj_top|accessCont:accessController|state
+Name state.gameStart state.setTime state.auth state.adjust state.pass state.compData state.bp_4 state.bp_3 state.bp_2 state.bp_1 
+state.bp_1 0 0 0 0 0 0 0 0 0 0 
+state.bp_2 0 0 0 0 0 0 0 0 1 1 
+state.bp_3 0 0 0 0 0 0 0 1 0 1 
+state.bp_4 0 0 0 0 0 0 1 0 0 1 
+state.compData 0 0 0 0 0 1 0 0 0 1 
+state.pass 0 0 0 0 1 0 0 0 0 1 
+state.adjust 0 0 0 1 0 0 0 0 0 1 
+state.auth 0 0 1 0 0 0 0 0 0 1 
+state.setTime 0 1 0 0 0 0 0 0 0 1 
+state.gameStart 1 0 0 0 0 0 0 0 0 1 
+
+State Machine - |CoogsLite_FinalProj_top|accessCont:accessController|memory_game:mem_game|state
+Name state.GAMEEND state.PAIR3 state.PAIR2 state.PAIR1 state.FLASH3 state.FLASH2 state.FLASH1 state.RETRIEVE state.INIT state.GAMEWAIT 
+state.GAMEWAIT 0 0 0 0 0 0 0 0 0 0 
+state.INIT 0 0 0 0 0 0 0 0 1 1 
+state.RETRIEVE 0 0 0 0 0 0 0 1 0 1 
+state.FLASH1 0 0 0 0 0 0 1 0 0 1 
+state.FLASH2 0 0 0 0 0 1 0 0 0 1 
+state.FLASH3 0 0 0 0 1 0 0 0 0 1 
+state.PAIR1 0 0 0 1 0 0 0 0 0 1 
+state.PAIR2 0 0 1 0 0 0 0 0 0 1 
+state.PAIR3 0 1 0 0 0 0 0 0 0 1 
+state.GAMEEND 1 0 0 0 0 0 0 0 0 1 
+
+State Machine - |CoogsLite_FinalProj_top|button_shaper:oneSecShape|state
+Name state.INIT state.WAIT state.PULSE 
+state.INIT 0 0 0 
+state.PULSE 1 0 1 
+state.WAIT 1 1 0 
+
+State Machine - |CoogsLite_FinalProj_top|button_shaper:butIn|state
+Name state.INIT state.WAIT state.PULSE 
+state.INIT 0 0 0 
+state.PULSE 1 0 1 
+state.WAIT 1 1 0 

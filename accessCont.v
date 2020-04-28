@@ -1,11 +1,13 @@
 //ECE5440
 //Eduardo Cantu, 9291
 //Module for access controller.
-module accessCont(clk, rst, swt_ac,
-				  gameSwitches, gameButton, score, redLight, g1, g2, g3, gameTimeout); 
-	input clk, rst, b_ac, nbr_dn1, nbr_dn2;
+module accessCont(clk, rst, swt_ac, b_ac, reconfig, addr1,
+				  gameSwitches, score, redLight, g1, g2, g3, gameTimeout, gameEnd, timerEnable); 
+	input clk, rst, b_ac;
 	input [3:0] swt_ac;
+	output reconfig;
 	reg dummy1;
+	output[7:0] addr1;
 	reg [7:0] addr1, addr2;
 	reg [3:0] state;
 	reg [15:0] USER;
@@ -16,15 +18,15 @@ module accessCont(clk, rst, swt_ac,
 	ROM_USER ROM_USER_instance(addr1, clk, data1);
 	ROM_PASS ROM_PASS_instance(addr2, clk, data2);
 
-	input gameButton, gameTimeout;
+	input gameTimeout;
 	input[15:0] gameSwitches;
 	output g1, g2, g3, gameEnd, timerEnable;
 	output[4:0] score;
 	output[15:0] redLight;
 	reg gameEnable;
 
-	memory_game mem_game(clk, rst, gameEnable, gameButton, gameSwitches, gameTimeout
-						 score, redLight, g1,g2,g3, gameEnd, timerEnable);
+	memory_game mem_game(clk, rst, b_ac, gameButton, gameSwitches, gameTimeout,
+						 score, redLight, g1,g2,g3, gameEnd, timerEnable, reconfig);
 	
 	parameter bp_1 = 0; 
 	parameter bp_2 = 1; 
@@ -34,7 +36,8 @@ module accessCont(clk, rst, swt_ac,
 	parameter pass = 5;
 	parameter adjust = 6;
 	parameter auth = 7;
-	parameter gameStart = 8;
+	parameter setTime = 8;
+	parameter gameStart = 9;
 
 	always@(posedge clk)
 	begin
@@ -46,7 +49,6 @@ module accessCont(clk, rst, swt_ac,
 				PASSWORD <= 0;
 				dummy1 <= 0;
 				state <= bp_1;
-
 				gameEnable <= 0;
 			end
 		else begin
@@ -141,7 +143,11 @@ module accessCont(clk, rst, swt_ac,
 						end
 					gameStart: 
 						begin
-							gameEnable <= 1;																		
+							gameEnable <= 1;
+							if(gameEnd)
+								state <= setTime;
+							else
+								state <= gameStart;
 						end
 				endcase
 			end

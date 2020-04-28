@@ -1,0 +1,150 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 2018  Intel Corporation. All rights reserved.
+# Your use of Intel Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Intel Program License 
+# Subscription Agreement, the Intel Quartus Prime License Agreement,
+# the Intel FPGA IP License Agreement, or other applicable license
+# agreement, including, without limitation, that your use is for
+# the sole purpose of programming logic devices manufactured by
+# Intel and sold by Intel or its authorized distributors.  Please
+# refer to the applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus Prime
+# Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+# Date created = 14:22:40  April 28, 2020
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		CoogsLite_FinalProj_top_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus Prime software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone IV E"
+set_global_assignment -name DEVICE EP4CE115F29C7
+set_global_assignment -name TOP_LEVEL_ENTITY CoogsLite_FinalProj_top
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.1.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "14:22:40  APRIL 28, 2020"
+set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
+set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VERILOG_FILE ../src/score_tracker_tb.v
+set_global_assignment -name VERILOG_FILE ../src/ROM_USER.v
+set_global_assignment -name QIP_FILE ../src/ROM_USER.qip
+set_global_assignment -name VERILOG_FILE ../src/ROM_PASS.v
+set_global_assignment -name QIP_FILE ../src/ROM_PASS.qip
+set_global_assignment -name VERILOG_FILE ../src/memoryPairs_tb.v
+set_global_assignment -name VERILOG_FILE ../src/memory_game_tb.v
+set_global_assignment -name VERILOG_FILE ../src/LFSR_random_number_generator_tb.v
+set_global_assignment -name VERILOG_FILE ../src/access_controller.v
+set_global_assignment -name VERILOG_FILE ../accessCont.v
+set_global_assignment -name VERILOG_FILE ../src/seven_seg.v
+set_global_assignment -name VERILOG_FILE ../src/score_tracker.v
+set_global_assignment -name VERILOG_FILE ../src/RAMinitial.v
+set_global_assignment -name VERILOG_FILE ../src/one_second_timer.v
+set_global_assignment -name VERILOG_FILE ../src/one_ms_timer.v
+set_global_assignment -name VERILOG_FILE ../src/one_hundred_ms_timer.v
+set_global_assignment -name VERILOG_FILE ../src/memoryPairs.v
+set_global_assignment -name VERILOG_FILE ../src/memory_game.v
+set_global_assignment -name VERILOG_FILE ../src/load_register.v
+set_global_assignment -name VERILOG_FILE ../src/LFSR_random_number_generator.v
+set_global_assignment -name VERILOG_FILE ../src/LFSR_1_ms_timer.v
+set_global_assignment -name VERILOG_FILE ../src/digitTimer.v
+set_global_assignment -name VERILOG_FILE ../src/countTo100.v
+set_global_assignment -name VERILOG_FILE ../src/countTo10.v
+set_global_assignment -name VERILOG_FILE ../src/counter.v
+set_global_assignment -name VERILOG_FILE ../src/CoogsLite_FinalProj_top.v
+set_global_assignment -name VERILOG_FILE ../src/button_shaper.v
+set_global_assignment -name VERILOG_FILE ../src/adder.v
+set_global_assignment -name SOURCE_FILE db/CoogsLite_FinalProj_top.cmp.rdb
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_location_assignment PIN_M23 -to buttonIn
+set_location_assignment PIN_Y2 -to clk
+set_location_assignment PIN_AH18 -to digit17seg[6]
+set_location_assignment PIN_AF18 -to digit17seg[5]
+set_location_assignment PIN_AG19 -to digit17seg[4]
+set_location_assignment PIN_AH19 -to digit17seg[3]
+set_location_assignment PIN_AB18 -to digit17seg[2]
+set_location_assignment PIN_AC18 -to digit17seg[1]
+set_location_assignment PIN_AD18 -to digit17seg[0]
+set_location_assignment PIN_AE18 -to digit27seg[6]
+set_location_assignment PIN_AF19 -to digit27seg[5]
+set_location_assignment PIN_AE19 -to digit27seg[4]
+set_location_assignment PIN_A21 -to digit27seg[3]
+set_location_assignment PIN_AG21 -to digit27seg[2]
+set_location_assignment PIN_AA19 -to digit27seg[1]
+set_location_assignment PIN_AB19 -to digit27seg[0]
+set_location_assignment PIN_E21 -to g1
+set_location_assignment PIN_E22 -to g2
+set_location_assignment PIN_E25 -to g3
+set_location_assignment PIN_H22 -to max7seg[6]
+set_location_assignment PIN_J22 -to max7seg[5]
+set_location_assignment PIN_L25 -to max7seg[4]
+set_location_assignment PIN_L26 -to max7seg[3]
+set_location_assignment PIN_E17 -to max7seg[2]
+set_location_assignment PIN_F22 -to max7seg[1]
+set_location_assignment PIN_G18 -to max7seg[0]
+set_location_assignment PIN_G15 -to redLight[15]
+set_location_assignment PIN_F15 -to redLight[14]
+set_location_assignment PIN_H17 -to redLight[13]
+set_location_assignment PIN_J16 -to redLight[12]
+set_location_assignment PIN_H16 -to redLight[11]
+set_location_assignment PIN_J15 -to redLight[10]
+set_location_assignment PIN_G17 -to redLight[9]
+set_location_assignment PIN_J17 -to redLight[8]
+set_location_assignment PIN_H19 -to redLight[7]
+set_location_assignment PIN_J19 -to redLight[6]
+set_location_assignment PIN_E18 -to redLight[5]
+set_location_assignment PIN_F18 -to redLight[4]
+set_location_assignment PIN_F21 -to redLight[3]
+set_location_assignment PIN_E19 -to redLight[2]
+set_location_assignment PIN_F19 -to redLight[1]
+set_location_assignment PIN_G19 -to redLight[0]
+set_location_assignment PIN_R24 -to rst
+set_location_assignment PIN_AA14 -to score7seg[6]
+set_location_assignment PIN_AG18 -to score7seg[5]
+set_location_assignment PIN_AF17 -to score7seg[4]
+set_location_assignment PIN_AH17 -to score7seg[3]
+set_location_assignment PIN_AG17 -to score7seg[2]
+set_location_assignment PIN_AE17 -to score7seg[1]
+set_location_assignment PIN_AD17 -to score7seg[0]
+set_location_assignment PIN_AA22 -to switches[15]
+set_location_assignment PIN_AA23 -to switches[14]
+set_location_assignment PIN_AA24 -to switches[13]
+set_location_assignment PIN_AB23 -to switches[12]
+set_location_assignment PIN_AB24 -to switches[11]
+set_location_assignment PIN_AC24 -to switches[10]
+set_location_assignment PIN_AB25 -to switches[9]
+set_location_assignment PIN_AC25 -to switches[8]
+set_location_assignment PIN_AB26 -to switches[7]
+set_location_assignment PIN_AD26 -to switches[6]
+set_location_assignment PIN_AC26 -to switches[5]
+set_location_assignment PIN_AB27 -to switches[4]
+set_location_assignment PIN_AD27 -to switches[3]
+set_location_assignment PIN_AC27 -to switches[2]
+set_location_assignment PIN_AC28 -to switches[1]
+set_location_assignment PIN_AB28 -to switches[0]
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -1,0 +1,44 @@
+Quartus Prime Archive log --	C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/syn/CoogsLite_FinalProj_top.qarlog
+
+Archive:	C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/syn/CoogsLite_FinalProj_top.qar
+Date:		Tue Apr 28 15:10:59 2020
+Quartus Prime		18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/accessCont.v
+C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/CoogsLite_FinalProj_top.v
+C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/LFSR_1_ms_timer.v
+C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/LFSR_random_number_generator.v
+C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/LFSR_random_number_generator_tb.v
+C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/RAMinitial.v
+C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/ROM_PASS.qip
+C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/ROM_PASS.v
+C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/ROM_USER.qip
+C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/ROM_USER.v
+C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/access_controller.v
+C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/adder.v
+C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/button_shaper.v
+C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/countTo10.v
+C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/countTo100.v
+C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/counter.v
+C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/digitTimer.v
+C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/load_register.v
+C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/memoryPairs.v
+C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/memoryPairs_tb.v
+C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/memory_game.v
+C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/memory_game_tb.v
+C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/one_hundred_ms_timer.v
+C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/one_ms_timer.v
+C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/one_second_timer.v
+C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/score_tracker.v
+C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/score_tracker_tb.v
+C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/seven_seg.v
+C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/syn/CoogsLite_FinalProj_top.qpf
+C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/syn/CoogsLite_FinalProj_top.qsf
+C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/syn/db/CoogsLite_FinalProj_top.cmp.rdb
+C:/users/baig_/onedrive/advanced digital design/finalproject_baig_o/fpga-memory-game-verilog/src/rom_pass.mif
+f:/intelfpga_lite/18.1/quartus/bin64/assignment_defaults.qdf
+	======= Total: 33 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

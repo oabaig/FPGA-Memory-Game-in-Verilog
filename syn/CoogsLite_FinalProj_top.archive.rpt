@@ -1,0 +1,136 @@
+Archive Project report for CoogsLite_FinalProj_top
+Tue Apr 28 15:10:59 2020
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Archive Project Summary
+  3. Archive Project Messages
+  4. Files Archived
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------+
+; Archive Project Summary                                        ;
++------------------------+---------------------------------------+
+; Archive Project Status ; Successful - Tue Apr 28 15:10:59 2020 ;
+; Revision Name          ; CoogsLite_FinalProj_top               ;
+; Top-level Entity Name  ; CoogsLite_FinalProj_top               ;
+; Family                 ; Cyclone IV E                          ;
++------------------------+---------------------------------------+
+
+
++--------------------------+
+; Archive Project Messages ;
++--------------------------+
+Info: File Set 'Source control' contains:
+    Info: Project source and settings files
+    Info: Automatically detected source files
+Warning: Hierarchical Platform Designer systems and custom IP components(_hw.tcl and associated files) are not archived by the Quartus Archiver
+Info: Archive will store files relative to the closest common parent directory
+Info (13213): Using common directory C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/
+Info: ----------------------------------------------------------
+Info: ----------------------------------------------------------
+Info: Generated archive 'C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/syn/CoogsLite_FinalProj_top.qar'
+Info: ----------------------------------------------------------
+Info: ----------------------------------------------------------
+Info: Generated report 'CoogsLite_FinalProj_top.archive.rpt'
+Info (23030): Evaluation of Tcl script f:/intelfpga_lite/18.1/quartus/common/tcl/apps/qpm/qar.tcl was successful
+Info: Quartus Prime Shell was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4831 megabytes
+    Info: Processing ended: Tue Apr 28 15:10:59 2020
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Files Archived                                                                                                                     ;
++------------------------------------------------------------------------------------------------------------------------------------+
+; File Name                                                                                                                          ;
++------------------------------------------------------------------------------------------------------------------------------------+
+; ../accessCont.v                                                                                                                    ;
+; ../src/access_controller.v                                                                                                         ;
+; ../src/adder.v                                                                                                                     ;
+; ../src/button_shaper.v                                                                                                             ;
+; ../src/CoogsLite_FinalProj_top.v                                                                                                   ;
+; ../src/counter.v                                                                                                                   ;
+; ../src/countTo10.v                                                                                                                 ;
+; ../src/countTo100.v                                                                                                                ;
+; ../src/digitTimer.v                                                                                                                ;
+; ../src/LFSR_1_ms_timer.v                                                                                                           ;
+; ../src/LFSR_random_number_generator.v                                                                                              ;
+; ../src/LFSR_random_number_generator_tb.v                                                                                           ;
+; ../src/load_register.v                                                                                                             ;
+; ../src/memory_game.v                                                                                                               ;
+; ../src/memory_game_tb.v                                                                                                            ;
+; ../src/memoryPairs.v                                                                                                               ;
+; ../src/memoryPairs_tb.v                                                                                                            ;
+; ../src/one_hundred_ms_timer.v                                                                                                      ;
+; ../src/one_ms_timer.v                                                                                                              ;
+; ../src/one_second_timer.v                                                                                                          ;
+; ../src/RAMinitial.v                                                                                                                ;
+; ../src/ROM_PASS.qip                                                                                                                ;
+; ../src/ROM_PASS.v                                                                                                                  ;
+; ../src/ROM_USER.qip                                                                                                                ;
+; ../src/ROM_USER.v                                                                                                                  ;
+; ../src/score_tracker.v                                                                                                             ;
+; ../src/score_tracker_tb.v                                                                                                          ;
+; ../src/seven_seg.v                                                                                                                 ;
+; /users/baig_/onedrive/advanced digital design/finalproject_baig_o/fpga-memory-game-verilog/src/rom_pass.mif                        ;
+; C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/accessCont.v                          ;
+; C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/access_controller.v               ;
+; C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/adder.v                           ;
+; C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/button_shaper.v                   ;
+; C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/CoogsLite_FinalProj_top.v         ;
+; C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/counter.v                         ;
+; C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/countTo10.v                       ;
+; C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/countTo100.v                      ;
+; C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/digitTimer.v                      ;
+; C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/LFSR_1_ms_timer.v                 ;
+; C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/LFSR_random_number_generator.v    ;
+; C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/LFSR_random_number_generator_tb.v ;
+; C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/load_register.v                   ;
+; C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/memory_game.v                     ;
+; C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/memory_game_tb.v                  ;
+; C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/memoryPairs.v                     ;
+; C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/memoryPairs_tb.v                  ;
+; C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/one_hundred_ms_timer.v            ;
+; C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/one_ms_timer.v                    ;
+; C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/one_second_timer.v                ;
+; C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/RAMinitial.v                      ;
+; C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/ROM_PASS.qip                      ;
+; C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/ROM_PASS.v                        ;
+; C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/ROM_USER.qip                      ;
+; C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/ROM_USER.v                        ;
+; C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/score_tracker.v                   ;
+; C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/score_tracker_tb.v                ;
+; C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/seven_seg.v                       ;
+; CoogsLite_FinalProj_top.qpf                                                                                                        ;
+; CoogsLite_FinalProj_top.qsf                                                                                                        ;
+; db/CoogsLite_FinalProj_top.cmp.rdb                                                                                                 ;
+; f:/intelfpga_lite/18.1/quartus/bin64/assignment_defaults.qdf                                                                       ;
++------------------------------------------------------------------------------------------------------------------------------------+
+
+

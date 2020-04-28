@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Apr 28 15:07:24 2020
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : CoogsLite_FinalProj_top
+Top-level Entity Name : CoogsLite_FinalProj_top
+Family : Cyclone IV E
+Total logic elements : 34
+    Total combinational functions : 34
+    Dedicated logic registers : 15
+Total registers : 15
+Total pins : 66
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
