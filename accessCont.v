@@ -36,8 +36,7 @@ module accessCont(clk, rst, swt_ac, b_ac, reconfig, addr1,
 	parameter pass = 5;
 	parameter adjust = 6;
 	parameter auth = 7;
-	parameter setTime = 8;
-	parameter gameStart = 9;
+	parameter gameStart = 8;
 
 	always@(posedge clk)
 	begin
@@ -144,10 +143,7 @@ module accessCont(clk, rst, swt_ac, b_ac, reconfig, addr1,
 					gameStart: 
 						begin
 							gameEnable <= 1;
-							if(gameEnd)
-								state <= setTime;
-							else
-								state <= gameStart;
+							state <= gameStart;
 						end
 				endcase
 			end

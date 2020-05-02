@@ -48,15 +48,11 @@ module memoryPairs(clk, rst, enable, A, B, C, D, E, F, endState);
 						F <= q;
 					else if(counter > 6)
 						begin
-						
-						
 							endState <= 1;
 							counter <= 0;
 							countWait <= 0;
 						end
-						
 				end
-				
 			else
 				begin
 					endState <= 0;

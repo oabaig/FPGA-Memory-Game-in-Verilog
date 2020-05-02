@@ -4,10 +4,10 @@
 	 rst, clk,
 	enable, // request signal that only does comparisons when asked, else state machine will run for no reason. 
 	 // Outputs player the max number of points of the game 
-	maxSeg 
+	maxSeg, maxAddr
 	);
 
-	input [3:0] playerID; 
+	input [2:0] playerID; 
 	input [3:0] newScore; 
 	input  clk, rst, enable; 
 
@@ -19,7 +19,7 @@
 	reg wren; 
 	wire [2:0] q;
 
-	 
+	output reg[2:0] maxAddr;
 	reg[2:0] currentScore,scoreIN; //Current score that is stored in RAM...which will be zero until new score is written into it, ScoreIN is reg for new score inputs
 	reg[2:0] maxPoints,maxSeg; //Maxpoints - reg for the high score in RAM;  MaxSeg- High Score to displey to 7seg
 	reg[3:0] state; 
@@ -148,6 +148,7 @@
 								data <= scoreIN; // store this in the MAX RAM address 
 								//maxPoints <= newScore; // new maxPoints variable should be new score that came in now 
 								state<= DISPLAY_MAX;
+								maxAddr <= playerID;
 							end 
 						DISPLAY_MAX: 
 							begin 

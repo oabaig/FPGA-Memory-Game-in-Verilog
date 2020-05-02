@@ -1,10 +1,8 @@
 module memoryPairs_tb();
 	
 	reg clk, rst, enable;
-	wire countWait;
 	wire endState;
 	wire[3:0] A, B, C, D, E, F;
-	wire [3:0] counter;
 
 	memoryPairs memoryPairs_DUT(clk, rst, enable, A, B, C, D, E, F, endState);
 

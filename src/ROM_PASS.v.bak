@@ -83,7 +83,7 @@ module ROM_PASS (
 		altsyncram_component.address_aclr_a = "NONE",
 		altsyncram_component.clock_enable_input_a = "BYPASS",
 		altsyncram_component.clock_enable_output_a = "BYPASS",
-		altsyncram_component.init_file = "C:/Users/Home/Downloads/FinalProject_BAIG_O/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/syn/CoogsLite_FinalProj_top_restored/src/ROM_PASS.mif",
+		altsyncram_component.init_file = "C:/Users/baig_/OneDrive/Advanced Digital Design/FinalProject_BAIG_O/FPGA-Memory-Game-Verilog/src/ROM_PASS.mif",
 		altsyncram_component.intended_device_family = "Cyclone IV E",
 		altsyncram_component.lpm_hint = "ENABLE_RUNTIME_MOD=NO",
 		altsyncram_component.lpm_type = "altsyncram",

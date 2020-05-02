@@ -4,12 +4,12 @@ module memory_game_tb();
 	reg clk, rst, enable, bIn, gameTimeout;
 	reg[15:0] switchIn;
 
-	wire g1, g2, g3, endGame;
+	wire g1, g2, g3, endGame, timerEnable, reconfig, g4, gameWait;
 	wire[3:0] score;
 	wire[15:0] redLight;
 
 	memory_game memGame_DUT(clk, rst, enable, bIn, switchIn, gameTimeout, score, 
-		redLight, g1,g2,g3, endGame);
+		redLight, g1,g2,g3, endGame,timerEnable, reconfig, g4, gameWait);
 
 	always 
 		begin
@@ -114,8 +114,8 @@ module memory_game_tb();
 			@(posedge clk)
 			@(posedge clk)
 
-		//	switchIn[a] = 1;
-		//	switchIn[f] = 1;
+			switchIn[4] = 1;
+			switchIn[11] = 1;
 			@(posedge clk)
 			@(posedge clk)
 			@(posedge clk)
