@@ -1,0 +1,182 @@
+//ECE5440
+//Eduardo Cantu, 9291
+//Module for access controller.
+module accessCont(clk, rst, swt_ac, b_ac, reconfig, playerAddress, playerAddressButton,
+				  gameSwitches, score, redLight, g1, g2, g3, gameTimeout, gameEnd, timerEnable, swt_ply, g4); 
+	input clk, rst, b_ac, playerAddressButton;
+	input [3:0] swt_ac;
+	input [3:0] swt_ply;
+	output reconfig;
+	reg passCheck;
+	reg [3:0] playerNum;
+	output reg[3:0] playerAddress;
+	reg [7:0] addr1, addr2;
+	reg [3:0] state;
+	reg [15:0] USER;
+	reg [19:0] PASSWORD;
+	wire [15:0] data1;
+	wire [19:0] data2;
+
+	ROM_USER ROM_USER_instance(addr1, clk, data1);
+	ROM_PASS ROM_PASS_instance(addr2, clk, data2);
+
+	input gameTimeout;
+	input[15:0] gameSwitches;
+	output g1, g2, g3, gameEnd, timerEnable, g4;
+	output[4:0] score;
+	output[15:0] redLight;
+	reg gameEnable;
+
+	wire gameWait;
+
+	memory_game mem_game(clk, rst, gameEnable, b_ac, gameSwitches, gameTimeout,
+						 score, redLight, g1,g2,g3, gameEnd, timerEnable, reconfig, g4, gameWait);
+	
+	parameter bp_1 = 0; 
+	parameter bp_2 = 1; 
+	parameter bp_3 = 2;
+	parameter bp_4 = 3;
+	parameter compData = 4;
+	parameter pass = 5;
+	parameter adjust = 6;
+	parameter auth = 7;
+	parameter gameStart = 8;
+	parameter pCheck = 9;
+
+	always@(posedge clk)
+	begin
+		if(rst == 0) 
+			begin
+				USER <= 0;
+				addr1 <= 0;
+				addr2 <= 0;
+				PASSWORD <= 0;
+				passCheck <= 0;
+				state <= pCheck;
+				gameEnable <= 0;
+				playerNum <= swt_ply;
+			end
+		else begin
+				case(state)
+					pCheck:
+						begin
+							if(playerNum >= 1) begin
+								state <= bp_1;
+							end
+						end
+					bp_1: 
+						begin
+								if(b_ac == 1) begin
+									if(passCheck == 0) begin
+										USER[15:12] <= swt_ac;
+										state <= gameStart;
+									end
+									if(passCheck == 1) begin
+										PASSWORD[19:16] <= swt_ac;
+										state <= bp_2;
+									end
+								end
+						end	
+					bp_2:
+						begin
+							if(b_ac == 1) begin
+								if(passCheck == 0) begin
+									USER[11:8] = swt_ac;
+									state <= bp_3;
+								end
+								if(passCheck == 1) begin
+									PASSWORD[15:12] <= swt_ac;
+									state <= bp_3;
+								end
+							end
+						end
+					bp_3:
+						begin
+							if(b_ac == 1) begin
+								if(passCheck == 0) begin
+									USER[7:4] <= swt_ac;
+									state <= bp_4;
+								end
+								if(passCheck == 1) begin
+									PASSWORD[11:8] = swt_ac;
+									state <= bp_4;
+								end
+							end
+						end
+					bp_4:
+						begin
+							if(b_ac == 1) begin
+								if(passCheck == 0) begin
+									USER[3:0] <= swt_ac;
+									state <= compData;
+								end
+								if(passCheck == 1) begin
+									PASSWORD[7:4] <= swt_ac;
+									state <= pass;
+								end
+							end
+						end
+					compData:
+						begin
+							if(USER != data1) begin
+								addr1 <= addr1 + 1;
+								addr2 <= addr2 + 1;
+							end
+							if(USER == data1) begin
+								passCheck <= 1;
+								state <= bp_1;
+							end
+							if(addr1 >= 7) begin
+								passCheck <= 0;
+								state <= bp_1;
+							end
+						end	
+					pass:
+						begin
+							if(b_ac == 1) begin
+									PASSWORD[3:0] <= swt_ac;
+									state <= adjust;
+							end
+						end
+					adjust:
+						begin
+							if(addr2 >= 1) begin
+								addr2 <= addr2 - 2;
+							end
+							state <= auth;
+						end
+					auth:
+						begin
+							if(PASSWORD == data2) begin
+								
+								if(playerNum == 1) begin
+									state <= gameStart;
+								end
+								else begin
+									playerNum <= playerNum - 1;
+									addr1 <= 0;
+									addr2 <= 0;
+									state <= bp_1;
+								end
+							end
+							else begin
+								state <= bp_1;
+							end
+						end
+					gameStart: 
+						begin
+							if(gameWait)
+								begin
+									if(playerAddressButton)
+										playerAddress <= playerAddress + 1;
+									if(playerAddress >= playerNum)
+										playerAddress <= 0;
+								end
+							gameEnable <= 1;
+							state <= gameStart;
+						end
+				endcase
+			end
+	end
+endmodule
+
